@@ -1,0 +1,59 @@
+{% extends "home/base.html" %}
+{% block content %}
+{% load static %}
+    <section id="title">
+        <!-- Title -->
+        <div class="title">
+            <h1>We're getting married!</h1>
+            <h3>11/11/2023</h3>
+        </div>
+    </section>
+    <section id="basic-info">
+        <!-- Venue -->
+        <div class="venue">
+            <h1>Hotel Doolin</h1>
+            <h4>Doolin, Co.Clare</h4>
+            <a href="">Website</a>
+        </div>
+    </section>
+    <section>
+        <!-- Getting Started -->
+        <div class="getting-started">
+            <h2>Ready?! Set?! Let's gooooo!</h2>
+            <div class="icons">
+                <a href="{% url 'rsvp_start' %}">
+                    <div class="icon">
+                        <div class="icon-container">
+                            <img src="{% static 'images/food-tray.png' %}">
+                        </div>
+                        <p>Tell us if you're coming and choose your food for the weekend.</p>
+                    </div>
+                </a>
+                <a href="{% url 'accommodation' %}">
+                    <div class="icon">
+                        <div class="icon-container">
+                            <img src="{% static 'images/sleep.png' %}">
+                        </div>
+                        <p>Check out where to stay and how to get there.</p>
+                    </div>
+                </a>
+                <a href="{% url 'day_2' %}">
+                    <div class="icon">
+                        <div class="icon-container">
+                            <img src="{% static 'images/toast.png' %}">
+                        </div>
+                        <p>A day what?!?! Yup, 2 days. Learn what we have planned for day 2 of the wedding.</p>
+                    </div>
+                </a>
+                <a href="{% url 'faq' %}">
+                    <div class="icon">
+                        <div class="icon-container">
+                            <img src="{% static 'images/interview.png' %}">
+                        </div>
+                        <p>Still have questions? Head to our FAQ page.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

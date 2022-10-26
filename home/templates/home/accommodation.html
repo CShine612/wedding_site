@@ -1,0 +1,99 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+    <section id="basic-info" class="accom-head">
+        <!-- Venue -->
+        <div class="accomodation">
+            <h3>Doolin, Co.Clare</h3>
+        </div>
+
+    </section>
+    <section class="getting-there">
+            <div class="section-head">
+                <h1>Getting There</h1>
+            </div>
+            <div class="travel-info">
+                <div class="travel-sidebar">
+                    <button class="travel-button travel-button-active" data-for-tab="plane">
+                        <div class="icon">
+                            <div class="icon-container">
+                                <img src="{% static 'images/airplane.png' %}">
+                            </div>
+                            <p>Plane</p>
+                        </div>
+                    </button>
+                    <button class="travel-button" data-for-tab="train">
+                        <div class="icon">
+                            <div class="icon-container">
+                                <img src="{% static 'images/train.png' %}">
+                            </div>
+                            <p>Bus/Train</p>
+                        </div>
+                    </button>
+                    <button class="travel-button" data-for-tab="car">
+                        <div class="icon">
+                            <div class="icon-container">
+                                <img src="{% static 'images/vehicle.png' %}">
+                            </div>
+                            <p>Car</p>
+                        </div>
+                    </button>
+                </div>
+                <div class="travel-content travel-content-active" data-tab="plane">
+                    <h2>Getting there by plane</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at convallis lorem, vitae auctor urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla scelerisque auctor justo a ultrices. Fusce justo purus, rhoncus porttitor leo eu, scelerisque tempor ipsum. Donec id risus vel mi elementum fermentum. Mauris purus dolor, varius non quam vitae, pretium cursus justo. Etiam sed dolor quis arcu finibus malesuada. Donec suscipit metus sed sodales rutrum. In placerat magna et tempor blandit. Aenean dignissim, ipsum nec rhoncus congue, lacus risus malesuada velit, sit amet laoreet eros magna eget lacus. Sed vel aliquam nisi, ut aliquam augue. Cras sollicitudin faucibus quam at rhoncus. Etiam suscipit et odio vitae luctus.
+                    </p>
+                </div>
+                <div class="travel-content" data-tab="train">
+                    <h2>Getting there by train or bus</h2>
+                    <p>
+                        Sed dui ipsum, euismod dictum quam a, eleifend ullamcorper nisi. Aenean a nunc vitae mi fringilla pulvinar quis a nunc. Sed non lorem tortor. Suspendisse in dui at orci hendrerit posuere in et lectus. Vestibulum bibendum pharetra nulla vitae bibendum. Fusce et libero tortor. In venenatis ornare lorem. Morbi id eros non libero commodo ullamcorper vel et libero.
+                    </p>
+                </div>
+                <div class="travel-content" data-tab="car">
+                    <h2>Getting there by car</h2>
+                    <p>
+                        Fusce mollis facilisis tortor, id fringilla mi hendrerit dignissim. Morbi felis mauris, feugiat a eleifend non, tempor vitae nisi. Sed nisi nunc, sodales quis auctor sit amet, sollicitudin non nunc. Proin interdum laoreet ligula, in tempus augue finibus ut. Phasellus vitae lorem nisi. Nulla mauris lorem, convallis eget nibh ac, porttitor tempus lorem. Donec mollis vehicula ligula, et semper arcu. Nullam egestas, mauris ac blandit finibus, lectus erat efficitur urna, sed tempus turpis lorem et purus. Mauris porta, justo eget sagittis mollis, lectus dui posuere nisl, ac molestie purus odio nec diam. Cras eget lectus sem. Sed a erat vitae erat mollis iaculis non cursus sapien. Cras pellentesque magna enim, eget vestibulum turpis faucibus lacinia. Integer dignissim ut augue ac suscipit. Sed id dolor imperdiet neque congue euismod in eu leo. Quisque sed finibus mi, et sodales dui.
+                    </p>
+                </div>
+            </div>
+    </section>
+    <section class="accommodation">
+            <div class="section-head">
+                <h1>Accommodation</h1>
+            </div>
+            <div class="search-area">
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at convallis lorem, vitae auctor urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla scelerisque auctor justo a ultrices. Fusce justo purus, rhoncus porttitor leo eu, scelerisque tempor ipsum. Donec id risus vel mi elementum fermentum. Mauris purus dolor, varius non quam vitae, pretium cursus justo. Etiam sed dolor quis arcu finibus malesuada. Donec suscipit metus sed sodales rutrum. In placerat magna et tempor blandit. Aenean dignissim, ipsum nec rhoncus congue, lacus risus malesuada velit, sit amet laoreet eros magna eget lacus. Sed vel aliquam nisi, ut aliquam augue. Cras sollicitudin faucibus quam at rhoncus. Etiam suscipit et odio vitae luctus.
+                    </p>
+                    <p>
+                        Sed dui ipsum, euismod dictum quam a, eleifend ullamcorper nisi. Aenean a nunc vitae mi fringilla pulvinar quis a nunc. Sed non lorem tortor. Suspendisse in dui at orci hendrerit posuere in et lectus. Vestibulum bibendum pharetra nulla vitae bibendum. Fusce et libero tortor. In venenatis ornare lorem. Morbi id eros non libero commodo ullamcorper vel et libero.
+                    </p>
+                </div>
+                <div class="accom-search-area">
+                    <img src="{% static 'images/search.png' %}" alt="search-icon" class="accom-search-img">
+                    <div class="accom-search-form">
+                        <h2>Find accomodation near the venue</h2>
+                        <p>Suggested check-in and check-out days: Nov 11 - Nov 13</p>
+                        {% csrf_token %}
+                        {% crispy form %}
+                        <button class="search-button"><img src="{% static 'images/search.png' %}" class="search-button-img">Search using ...</button>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="search-pop-up">
+        <span class="close"></span>
+        <h3>Search for accomodation using:</h3>
+        <p>Click the links below to compare prices</p>
+        <button class="site-search-button airbnb"><img src="{% static 'images/airbnb.svg' %}" alt="airBnB" class="site-button-img"></button>
+        <button class="site-search-button hotels"><img src="{% static 'images/hotels-com.svg' %}" alt="Hotels.com" class="site-button-img"></button>
+        <button class="site-search-button booking"><img src="{% static 'images/booking-com.svg' %}" alt="booking.com" class="site-button-img"></button>
+    </section>
+
+    <script src="{% static 'accommodation.js' %}"></script>
+{% endblock %}

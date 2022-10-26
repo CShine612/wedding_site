@@ -1,0 +1,11 @@
+{% extends "home/base.html" %}
+{% block content %}
+    <section id="faq">
+        <h1>FAQs</h1>
+        <!-- Venue -->
+        {% for faq in faqs %}
+        <h3>{{ faq.question }}</h3>
+        <p>{{ faq.answer }}</p>
+        {% endfor %}
+    </section>
+{% endblock %}

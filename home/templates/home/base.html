@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C + K</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="header">
+        <a href="{% url 'home' %}" class="name-title">Chris & Karissa</a>
+        <!-- Navbar -->
+        <nav class="nav-bar">
+            <a href="{% url 'venue' %}" class="nav-item">Venue</a>
+            <a href="{% url 'accommodation' %}" class="nav-item">Accommodation</a>
+            <a href="{% url 'ceremony' %}" class="nav-item">Ceremony</a>
+            <a href="{% url 'day_2' %}" class="nav-item">Day 2</a>
+            <a href="{% url 'gifts' %}" class="nav-item">Gifts</a>
+            <a href="{% url 'rsvp_start' %}" class="nav-item">RSVP</a>
+            <a href="{% url 'faq' %}" class="nav-item">FAQ</a>
+        </nav>
+        <img src="{% static 'images/burger-menu.png' %}" class="menu-button" alt="menu-button">
+    </section>
+    {% block content %}
+    {% endblock %}
+    <section id="footer">
+        <img src="{% static 'images/image.png' %}" alt="chris-icon">
+        <a href="{% url 'contact' %}">Contact Us</a>
+        <img src="{% static 'images/image.png' %}" alt="karissa-icon">
+    </section>
+    <script src="{% static 'base.js' %}"></script>
+</body>
+</html>

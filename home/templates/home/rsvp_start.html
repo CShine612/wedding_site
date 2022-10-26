@@ -1,0 +1,29 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>Will you be with us or will you miss it?</h1>
+    <p>To confirm your attendance to the wedding, just enter your name and click on Search. Your name will appear click on it, and you can tell us if you're coming. (leaving a message is optional, but it's always nice!)</p>
+    <div class="guest-search">
+        <div class="form_container-center">
+            {% csrf_token %}
+            {% crispy form %}
+        </div>
+        <div class="guest-result-area">
+            {% if search_results %}
+                <ul>
+                {% for result in search_results %}
+                    <li>
+                        <div class="guest-result">
+                            <form action="{% url 'rsvp' result.id %}">
+                                <p>{{ result.first_name }} {{ result.surname }}</p>
+                                <button type="submit">Select</button>
+                            </form>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

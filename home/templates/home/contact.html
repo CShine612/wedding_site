@@ -1,0 +1,15 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+    <div class="contact-area">
+        <div class="form_container">
+            <h1>Get In Touch</h1>
+            {% csrf_token %}
+            {% crispy form %}
+        </div>
+        <div>
+            <img class="contact-image" src="{% static 'images/contact-img.jfif' %}">
+        </div>
+    </div>  
+{% endblock %}
